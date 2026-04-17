@@ -461,7 +461,7 @@ if predict_btn:
         prob_negative = 100 - prob_positive
 
     st.markdown("---")
-    st.header("🎯 Prediction Results")
+    st.header("Prediction Results")
 
     col1, col2 = st.columns([2, 1])
 
@@ -470,14 +470,14 @@ if predict_btn:
 
         if prediction == 0:
             if prob_positive < 30:
-                st.success("### ✅ LOW RISK — Not Diabetic")
+                st.success("### LOW RISK — Not Diabetic")
             else:
-                st.warning("### ⚠️ MODERATE RISK — Not Diabetic")
+                st.warning("### MODERATE RISK — Not Diabetic")
         else:
             if prob_positive > 70:
-                st.error("### 🔴 HIGH RISK — Diabetic")
+                st.error("### HIGH RISK — Diabetic")
             else:
-                st.warning("### ⚠️ MODERATE RISK — Diabetic")
+                st.warning("### MODERATE RISK — Diabetic")
 
         st.subheader("Probability Breakdown")
 
@@ -556,25 +556,25 @@ if predict_btn:
     positive_factors = []
 
     if glucose > 125:
-        risk_factors.append("🔴 High Glucose Level (>125 mg/dL)")
+        risk_factors.append("High Glucose Level (>125 mg/dL)")
     elif glucose < 100:
-        positive_factors.append("🟢 Normal Glucose Level")
+        positive_factors.append(" Normal Glucose Level")
 
     if bmi > 30:
-        risk_factors.append("🔴 High BMI - Obesity (>30)")
+        risk_factors.append(" High BMI - Obesity (>30)")
     elif 18.5 <= bmi <= 24.9:
-        positive_factors.append("🟢 Healthy BMI (18.5-24.9)")
+        positive_factors.append("Healthy BMI (18.5-24.9)")
 
     if age > 45:
-        risk_factors.append("🟡 Age Factor (>45)")
+        risk_factors.append("Age Factor (>45)")
 
     if bp > 80:
-        risk_factors.append("🔴 High Blood Pressure (>80 mm Hg)")
+        risk_factors.append("High Blood Pressure (>80 mm Hg)")
     elif 60 <= bp <= 80:
-        positive_factors.append("🟢 Normal Blood Pressure")
+        positive_factors.append(" Normal Blood Pressure")
 
     if dpf > 0.5:
-        risk_factors.append("🟡 Genetic Predisposition")
+        risk_factors.append(" Genetic Predisposition")
 
     if risk_factors:
         st.warning("**Identified Risk Factors:**")
@@ -588,7 +588,7 @@ if predict_btn:
 
     # ── Recommendations ──
     st.markdown("---")
-    st.subheader("💡 Recommendations")
+    st.subheader(" Recommendations")
 
     if prediction == 1:
         st.error("""
@@ -606,7 +606,7 @@ if predict_btn:
     # ── Disclaimer ──
     st.markdown("---")
     st.warning("""
-    ⚠️ This tool is for educational purposes only and not a medical diagnosis.
+     This tool is for educational purposes only and not a medical diagnosis.
     """)
 
 else:
